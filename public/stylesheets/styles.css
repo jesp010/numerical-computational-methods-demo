@@ -1,0 +1,14 @@
+.main.container {
+  margin-top: 7em;
+}
+
+p.lead {
+  font-size: 1.3em;
+  color: #333333;
+  line-height: 1.4;
+  font-weight: 300;
+}
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
