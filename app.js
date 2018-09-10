@@ -22,7 +22,7 @@ app.get("/*", function(req, res){
 	res.send("Page not found");
 });
 
-app.listen(3000, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
 	console.log("Server Has Started");
 });
 
