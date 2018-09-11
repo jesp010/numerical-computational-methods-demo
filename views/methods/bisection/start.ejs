@@ -12,13 +12,13 @@
     <div>
         <p>Determining approximate root of <strong>f(x) = -12x<sup>5</sup> - 6.4x<sup>3</sup> + 12</strong></p>
         <p>Stop condition: <strong>0.0000001</strong></p>
-        <p>Interval: <strong>-400 to 300</strong></p>
-        <a href="/start" class="ui button">Start again</a>
+        <p>Interval: <strong><%=results.iv %> to <%= results.fv %></strong></p>
+        <a href="/" class="ui button">Go back</a>
     </div>
     <div class="ui divider"></div>
 
     <div>
-        <table class="ui unstackable table center aligned">
+        <table class="ui selectable celled table center aligned">
             <thead>
                 <tr>
                     <th>Iteration</th>
@@ -28,22 +28,35 @@
                 </tr>
                 <% for(let i = 0; i < results.iterations.length; i++){ %>
                 <tr>
-                    <th>
+                    <td>
                         <%= results.iterations[i] + 1 %>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <%= results.ivs[i] %>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <%= results.fvs[i] %>
-                    </th>
-                    <th>
-                        <%= results.mps[i] %>
-                    </th>
+                    </td>
+                    <% if(i == (results.iterations.length -1)){ %>
+                        <td class="positive">
+                            <%= results.mps[i] %>
+                        </td>
+                    <% } else {%>
+                        <td>
+                            <%= results.mps[i] %>
+                        </td>
+                    <% } %>
                 </tr>
                 <% } %>
             </thead>
         </table>
+
+        <div class="ui divider"></div>
+        <h4 class="ui huge header"> Root: <strong><%= results.mps[results.iterations.length -1] %></strong></h4>
+        <h6 class="ui medium header"> Time elapsed: <strong><%= results.time %></strong> seconds.</h6>
+
+        <div class="ui divider"></div>
+
     </div>
 
 </div>

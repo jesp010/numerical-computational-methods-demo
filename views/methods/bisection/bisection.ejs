@@ -12,10 +12,21 @@
     <div>
         <p>Determining approximate root of <strong>f(x) = -12x<sup>5</sup> - 6.4x<sup>3</sup> + 12</strong></p>
         <p>Stop condition: <strong>0.0000001</strong></p>
-        <p>Interval: <strong>-400 to 300</strong></p>
-        <a href="/start" class="ui button">Start</a>
+        <div>
+            Interval: 
+            <form action="/start" method="POST">
+                <div class="ui mini input">
+                    <input type="text" name="initial_value" placeholder="Initial Point" value="-300">
+                </div>
+                <div class="ui mini input">
+                    <input type="text" name="final_value" placeholder="Final Point" value="400">
+                </div>
+                <button class="ui button">Start</button>
+            </form>
+        </div>
     </div>
     <div class="ui divider"></div>
 </div>
+
 <% include ../../partials/brs %>
 <% include ../../partials/footer %>
