@@ -2,7 +2,7 @@ let now = require("performance-now");
 
 function start(initial_value, final_value) {
 	const STOP_CONDITION = 0.0000001;
-	
+
 	//cast args to number
 	let iv = Number(initial_value);
 	let fv = Number(final_value);
@@ -11,12 +11,10 @@ function start(initial_value, final_value) {
 	let start = now();
 	let end = now();
 	let results = main(iv, fv);
-	results.time = ((end - start)/1000).toFixed(8);
+	results.time = ((end - start) / 1000).toFixed(8);
 
 	//return results
 	return results;
-
-
 
 	//------------------------------------------ functions: --------------------------------------------
 	//main func
@@ -24,7 +22,7 @@ function start(initial_value, final_value) {
 		return bisection(initial_value, final_value);
 	}
 
-	//return f(x) = -12x^5 - 6.4x^3 + 12 ecuation 
+	//return f(x) = -12x^5 - 6.4x^3 + 12 ecuation
 	function func(x) {
 		if (typeof x == "number")
 			return -12 * (x * x * x * x * x) - 6.4 * (x * x * x) + 12;
